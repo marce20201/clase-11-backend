@@ -1,0 +1,21 @@
+extends layouts/index
+block main
+    div
+        h1="Productos"
+        br
+
+        if productos 
+            table(class="table table-dark")
+                tr 
+                    th="Producto" 
+                    th="Precio" 
+                    th="Imagen"
+                each producto in productos
+                    tr 
+                        td=producto.title
+                        td=producto.price
+                        td 
+                            img(src=producto.thumbnail alt="No se ha podido cargar la imagen"  width="70")
+        else  
+            div(class="alert alert-primary" role="alert")
+                h3=error

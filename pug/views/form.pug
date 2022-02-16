@@ -1,0 +1,20 @@
+extends layouts/index
+block main
+	div(class="container")
+		div(class="row centered-form")
+		div(class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4")
+			div(class="panel panel-default")
+				div(class="panel-heading")
+						h3(class="panel-title")="Ingrese un nuevo producto"
+						div(class="panel-body")
+						form(role="form" action="api/productos/guardar" method="POST")
+							div(class="row")
+								div(class="col-xs-6 col-sm-6 col-md-6")
+									div(class="form-group")
+										input(type="text" name="title" id="title" class="form-control input-sm" placeholder="Producto")
+								div(class="col-xs-6 col-sm-6 col-md-6")
+									div(class="form-group")
+										input(type="number" name="price" id="price" class="form-control input-sm" placeholder="Precio")
+									div(class="form-group")
+							input(type="text" name="thumbnail" id="thumbnail" class="form-control input-sm" placeholder="thumbnail")
+							input(type="submit" value="Nuevo" class="btn btn-info btn-block")
